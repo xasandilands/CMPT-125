@@ -42,10 +42,8 @@ int main()
     while(WINNER == false && ATTEMPTS<=20)
     {
         printf("Enter your guess, 6 digits ");
-        for(
-        {
-            printf("Previous guess %d: %d - %d matches %d partial matches", ATTEMPTS, PREVIOUS_GUESS[ATTEMPTS],MACTHES,P_MATCHES);
-        }
+      
+        
 
     }
 }
