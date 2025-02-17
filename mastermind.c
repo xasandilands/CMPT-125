@@ -4,10 +4,30 @@
 #include <stdbool.h>
 #define MAX_ATTEMPTS 20
 
+void RandSol (int arr[])
+    {
+        for(int i=0; i<6;i++)
+        {
+            arr[i]=rand()%6;
+        }
+    }
+
+
+void removeTabsandSpaces (char GUESS[], char CLEANED_GUESS[]){
+    int k = 0;
+    for(int i = 0; GUESS[i] != '\0'; i++){
+        if (GUESS[i] != ' ' && GUESS[i] != '\t')
+        {
+            CLEANED_GUESS[k++] = GUESS[i];
+        }
+    }
+    CLEANED_GUESS[k] = '\0';
+}
+
 int main()
 {
-    int SOL[6];
-    int PREVIOUS_GUESS[20][6];
+    int SOL[7];
+    int PREVIOUS_GUESS[20][7];
     char GUESS[100];
     char CLEANED_GUESS[7];
     int ATTEMPTS = 0;
@@ -37,14 +57,14 @@ int main()
 
     printf("For each turn enter 6 digits 0 <= digit <= 5\nSpaces or tabs in your response will be ignored");
 
-    while(WINNER == false && ATTEMPTS>=MAX_ATTEMPTS)
+    while(WINNER == false && ATTEMPTS<MAX_ATTEMPTS)
     {
         printf("Enter your guess, 6 digits ");
         fgets(GUESS, sizeof(GUESS), stdin);
-        removeTabsandSpaces(GUESS, CLEANED_GUESS)
+        removeTabsandSpaces(GUESS, CLEANED_GUESS);
 
         int length = 0;
-        while (CLEANED_GUESS[length] != "\0")
+        while (CLEANED_GUESS[length] != '\0')
         {
             length++;
         }
@@ -54,27 +74,7 @@ int main()
         }else{
             printf("Error, not 6 digits");
         }
-        return 0;
 
     }
-}
-
-void RandSol(int arr[])
-    {
-        for(int i=0; i<6;i++)
-        {
-            arr[i]=rand()%6;
-        }
-    }
-
-
-void removeTabsandSpaces (char GUESS[], char CLEANED_GUESS[]){
-    int k = 0;
-    for(int i = 0; GUESS[i] != '\0'; i++){
-        if (GUESS[i] != ' ' && GUESS[i] != '\t')
-        {
-            CLEANED_GUESS[k++] = GUESS[i];
-        }
-    }
-    CLEANED_GUESS[k] = '\0';
+    return 0;
 }
