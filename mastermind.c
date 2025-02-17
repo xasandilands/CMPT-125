@@ -41,7 +41,7 @@ int main()
         printf("Enter your guess, 6 digits ");
         for(int i=ATTEMPTS;i>0;i--)
         {
-            printf("Previous guess %d: %d - %d matches %d partial matches", ATTEMPTS,PREVIOUS_GUESS[i-1],MACTHES,P_MATCHES);
+
         }
 
     }
