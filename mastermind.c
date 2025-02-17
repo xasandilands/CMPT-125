@@ -30,14 +30,9 @@ int main()
             printf("Please enter an integer to be the seed for the game: ");
         }
     }
-    
     srand(SEED);
-
-    for(int i=0; i<6;i++)
-    {
-        SOLUTION[i]=rand()%6;
-    }
-    
+    RandSol(SOLUTION);
+    printf(SOLUTION);
     printf("For each turn enter 6 digits 0 <= digit <= 5\nSpaces or tabs in your response will be ignored");
 
     while(WINNER == false && ATTEMPTS>=MAX_ATTEMPTS)
@@ -48,3 +43,11 @@ int main()
 
     }
 }
+
+void RandSol(int *arr [])
+    {
+        for(int i=0; i<6;i++)
+        {
+            *arr[i]=rand()%6;
+        }
+    }
