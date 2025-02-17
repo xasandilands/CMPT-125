@@ -5,11 +5,15 @@
 
 int main()
 {
-    char SOLUTION[6];
-    char PREVIOUS_GUESS[20][6];
-    char GUESS[6];
+    int SOLUTION[6];
+    int PREVIOUS_GUESS[20][6];
+    int GUESS[6];
     int ATTEMPTS = 0;
     int SEED = 0;
+    int MACTHES = 0;
+    int P_MATCHES = 0;
+    bool WINNER = false;
+    
 
     printf("Enter the integer value of the seed for the game: ");
     scanf("%d", &SEED);
@@ -25,5 +29,23 @@ int main()
             printf("Please enter an integer to be the seed for the game: ");
         }
     }
+    
+    srand(SEED);
 
+    for(int i=0; i<6;i++)
+    {
+        SOLUTION[i]=rand()%6;
+    }
+    
+    printf("For each turn enter 6 digits 0 <= digit <= 5\nSpaces or tabs in your response will be ignored");
+
+    while(WINNER == false && ATTEMPTS<=20)
+    {
+        printf("Enter your guess, 6 digits ");
+        for(
+        {
+            printf("Previous guess %d: %d - %d matches %d partial matches", ATTEMPTS, PREVIOUS_GUESS[ATTEMPTS],MACTHES,P_MATCHES);
+        }
+
+    }
 }
