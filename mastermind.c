@@ -9,17 +9,21 @@ int main()
     char PREVIOUS_GUESS[20][6];
     char GUESS[6];
     int ATTEMPTS = 0;
-    int SEED = NULL;
-    
+    int SEED = 0;
+
     printf("Enter the integer value of the seed for the game: ");
     scanf("%d", &SEED);
-    while(SEED == NULL)
+
+    if (SEED == 0)
     {
-        printf("Try again you made an error");
+        printf("Try again, you made an error\n");
         printf("Please enter an integer to be the seed for the game: ");
-        scanf("%d", &SEED);
+        while (scanf("%d", &SEED) != 1)
+        {
+
+            while (getchar() != '\n');
+            printf("Please enter an integer to be the seed for the game: ");
+        }
     }
-    
-    
 
 }
