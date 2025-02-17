@@ -68,13 +68,13 @@ void RandSol(int arr[])
     }
 
 
-void removeTabsandSpaces (char GUESS[], char CLEANED_GUESS){
+void removeTabsandSpaces (char GUESS[], char CLEANED_GUESS[]){
     int k = 0;
-    for(int i = 0; GUESS[i] != "\0"; i++){
-        if (GUESS[i] != " " && GUESS[i] != "\t")
+    for(int i = 0; GUESS[i] != '\0'; i++){
+        if (GUESS[i] != ' ' && GUESS[i] != '\t')
         {
             CLEANED_GUESS[k++] = GUESS[i];
         }
     }
-    CLEANED_GUESS[k] = "\0";
+    CLEANED_GUESS[k] = '\0';
 }
