@@ -8,7 +8,8 @@ int main()
 {
     int SOL[6];
     int PREVIOUS_GUESS[20][6];
-    int GUESS[100];
+    char GUESS[100];
+    char CLEANED_GUESS[7];
     int ATTEMPTS = 0;
     int SEED = 0;
     int MACTHES = 0;
@@ -39,6 +40,21 @@ int main()
     while(WINNER == false && ATTEMPTS>=MAX_ATTEMPTS)
     {
         printf("Enter your guess, 6 digits ");
+        fgets(GUESS, sizeof(GUESS), stdin);
+        removeTabsandSpaces(GUESS, CLEANED_GUESS)
+
+        int length = 0;
+        while (CLEANED_GUESS[length] != "\0")
+        {
+            length++;
+        }
+
+        if (length == 6){
+            printf("Clean 6 digit array!: %s\n", CLEANED_GUESS);
+        }else{
+            printf("Error, not 6 digits");
+        }
+        return 0;
 
     }
 }
@@ -50,3 +66,15 @@ void RandSol(int arr[])
             arr[i]=rand()%6;
         }
     }
+
+
+void removeTabsandSpaces (char GUESS[], char CLEANED_GUESS){
+    int k = 0;
+    for(int i = 0; GUESS[i] != "\0"; i++){
+        if (GUESS[i] != " " && GUESS[i] != "\t")
+        {
+            CLEANED_GUESS[k++] = GUESS[i];
+        }
+    }
+    CLEANED_GUESS[k] = "\0";
+}
