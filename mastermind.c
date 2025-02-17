@@ -36,9 +36,13 @@ int main()
 
     printf("For each turn enter 6 digits 0 <= digit <= 5\nSpaces or tabs in your response will be ignored");
 
-    while(WINNER == false && ATTEMPTS>=MAX_ATTEMPTS)
+    while(WINNER == false && ATTEMPTS<=MAX_ATTEMPTS)
     {
         printf("Enter your guess, 6 digits ");
+        for(int i=ATTEMPTS;i>0;i--)
+        {
+            printf("Previous guess %d: %d - %d matches %d partial matches", ATTEMPTS,PREVIOUS_GUESS[i-1],MACTHES,P_MATCHES);
+        }
 
     }
 }
@@ -50,3 +54,5 @@ void RandSol(int arr[])
             arr[i]=rand()%6;
         }
     }
+
+
