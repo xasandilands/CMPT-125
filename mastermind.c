@@ -7,7 +7,7 @@ int main()
 {
     int SOLUTION[6];
     int PREVIOUS_GUESS[20][6];
-    int GUESS[6];
+    int GUESS[100];
     int ATTEMPTS = 0;
     int SEED = 0;
     int MACTHES = 0;
