@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#define MAX_ATTEMPTS 20
 
 int main()
 {
@@ -39,11 +40,11 @@ int main()
     
     printf("For each turn enter 6 digits 0 <= digit <= 5\nSpaces or tabs in your response will be ignored");
 
-    while(WINNER == false && ATTEMPTS<=20)
+    while(WINNER == false && ATTEMPTS>=MAX_ATTEMPTS)
     {
         printf("Enter your guess, 6 digits ");
-      
-        
+
+
 
     }
 }
