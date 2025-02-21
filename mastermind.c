@@ -69,10 +69,10 @@ int main()
             length++;
         }
 
-        if (length == 6){
+        if (length == 7){
             printf("Clean 6 digit array!: %s\n", CLEANED_GUESS);
         }else{
-            printf("Error, not 6 digits");
+            printf("Error, not 6 digits\n");
         }
 
     }
